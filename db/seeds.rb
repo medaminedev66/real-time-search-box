@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require_relative '../lib/populator_fix.rb'
+require 'faker'
+
+10.times do
+  Article.create(
+    title: Faker::Book.title,
+    text: Faker::Lorem.paragraphs(number: 5).join('\n'),
+    # author: Faker::Name.name
+  )
+end

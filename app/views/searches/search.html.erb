@@ -1,0 +1,16 @@
+<h1>Real-time Search box</h1>
+<p>Let's try a search</p>
+
+<div>
+  <input type="text" id="search"/>
+</div>
+
+
+<div class="articles-container">
+  <% @articles.each do |article| %>
+    <article>
+      <h2 class="article-title"> <%= article.title%></h2>
+      <p> <%= article.text%></p>
+    </article>
+  <% end %>
+</div>

@@ -7,6 +7,8 @@ ruby "3.1.2"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem 'rack-cors'
+
 gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
@@ -49,6 +51,8 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem 'faker'
+  gem 'populator'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
