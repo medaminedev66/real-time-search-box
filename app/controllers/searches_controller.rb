@@ -1,6 +1,10 @@
 class SearchesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
+  def index
+    @searches = Search.all
+  end
+
   def search
     @articles = Article.all
   end

@@ -13,11 +13,85 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
 
-.visible {
-  display: block;
+body {
+  background-color: #141c2f;
+  color: white;
+  font-family: 'Heebo', sans-serif;
 }
 
-.invisible {
-  display: none;
+.flex-row {
+  display: flex;
+}
+
+.flex-clm {
+  display: flex;
+  flex-direction: column;
+}
+
+.white {
+  color: white;
+}
+
+.container {
+  width: 50%;
+  margin: auto;
+  gap: 1rem;
+}
+
+.top-bar {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-input {
+  padding: 1rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: #1f2a48;
+  border: none;
+  color: white;
+}
+
+article {
+  width: 100%;
+  padding: 1rem;
+  background-color: #1f2a48;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+th {
+  background-color: #1f2a48;
+  color: white;
+  font-size: 14px;
+}
+
+td {
+  font-size: 5px;
+  font-style: italic;
+}
+
+th:first-child,
+td:first-child {
+  width: 70%;
+  text-align: left;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 30%;
 }

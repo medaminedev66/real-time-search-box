@@ -1,0 +1,21 @@
+<div class="flex-row top-bar">
+  <h1> Latest searches </h1>
+  <%= link_to 'Search for something else', '/searches/search', class: "white" %>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Search</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @searches.each do |search| %>
+    <tr>
+      <th><%= search.sentence %></th>
+      <th><%= search.created_at %></th>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

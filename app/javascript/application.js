@@ -7,7 +7,7 @@ let timeOut;
 
 document.getElementById('search').addEventListener('keyup', () => {
   clearTimeout(timeOut);
-  timeOut = setTimeout(doneTimeOut, 9000);
+  timeOut = setTimeout(doneTimeOut, 6000);
   search();
 });
 
