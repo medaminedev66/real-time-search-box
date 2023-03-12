@@ -1,7 +1,8 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import '@hotwired/turbo-rails';
 import 'controllers';
-// import search from './search';
+
+let timeOut;
 
 const search = () => {
   let searchValue = document.getElementById('search').value;
@@ -19,11 +20,9 @@ const search = () => {
   });
 };
 
-let timeOut;
-
 document.getElementById('search').addEventListener('keyup', () => {
   clearTimeout(timeOut);
-  timeOut = setTimeout(doneTimeOut, 6000);
+  timeOut = setTimeout(doneTimeOut, 7000);
   search();
 });
 
@@ -39,7 +38,7 @@ const doneTimeOut = () => {
       },
       body: JSON.stringify({ sentence: search }),
     })
-      .then((response) => response.status)
+      .then((response) => response.json())
       .catch((error) => {
         console.error('Error saving search', error);
       });
