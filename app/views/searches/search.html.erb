@@ -1,0 +1,25 @@
+<% if request.headers['Referer'].to_s.present? && URI(request.headers['Referer']).path == '/searches' %>
+  <script>
+    location.reload();
+  </script>
+<% end %>
+
+<div class='flex-clm container'>
+  <div class='flex-row top-bar'>
+    <h1>Real-time Search box</h1>
+    <%= link_to 'Latest searches', '/searches', class: "white" %>
+  </div>
+  
+  <div>
+    <input class= "search-input" type="text" id="search" placeholder="Search for an Article" />
+  </div>
+  
+  <div class="articles-container">
+    <% @articles.each do |article| %>
+      <article>
+        <h2 class="article-title"> <%= article.title%></h2>
+        <p> <%= article.text%></p>
+      </article>
+    <% end %>
+  </div>
+</div>

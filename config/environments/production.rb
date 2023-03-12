@@ -24,6 +24,9 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
 
+  config.assets.precompile += %w( application.js )
+  Rails.application.config.assets.precompile += %w( search.js )
+
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
 
