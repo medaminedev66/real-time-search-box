@@ -31,7 +31,7 @@ const doneTimeOut = () => {
   const search = document.getElementById('search').value;
 
   if (search.length > 0) {
-    fetch('http://127.0.0.1:3000/save_search', {
+    fetch('/save_search', {
       method: 'POST',
       mode: 'no-cors',
       headers: {
