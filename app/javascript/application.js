@@ -1,7 +1,23 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import '@hotwired/turbo-rails';
 import 'controllers';
-import search from './search';
+// import search from './search';
+
+const search = () => {
+  let searchValue = document.getElementById('search').value;
+  const articleTitles = document.querySelectorAll('.article-title');
+
+  articleTitles.forEach((title) => {
+    console.log(title.innerText);
+    if (
+      title.innerText.toLowerCase().indexOf(searchValue.toLowerCase()) != -1
+    ) {
+      title.parentNode.style.display = 'block';
+    } else {
+      title.parentNode.style.display = 'none';
+    }
+  });
+};
 
 let timeOut;
 
