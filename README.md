@@ -1,7 +1,7 @@
 
 <a name="readme-top"></a>
 
-![Rails](https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white) ![](https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![](https://img.shields.io/badge/RuboCop-000000.svg?style=for-the-badge&logo=RuboCop&logoColor=white)
+![Rails](https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white) ![](https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![](https://img.shields.io/badge/RuboCop-000000.svg?style=for-the-badge&logo=RuboCop&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 <div align="center">
   <h3><b>Real-Time Search Box</b></h3>
@@ -35,7 +35,7 @@
 
 # 📖 Real-time Search Box <a name="about-project"></a>
 
-**Real-Time Search Box** is an app that enables This app enables users to search for articles in real-time and provides analytics on their search queries.
+**Real-Time Search Box** is an app that enables users to search for articles in real-time and provides analytics on their search queries.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -70,8 +70,6 @@
 - Search for articles and view results as you type
 - Automatically save search history
 - Access previous searches on the Latest Search page
-
-#### Steps I followed to build this app 
 
 The user interface for the search box and search results was designed using erb and JavaScript. JavaScript was chosen because it's difficult to listen to user typing with only erb. By utilizing JavaScript events, the search function can respond immediately to user input. When a search query matches an article, the corresponding article is immediately displayed. In cases where the user stops typing for more than 5 seconds, the search query is recorded and sent to the backend for processing.
 
@@ -194,11 +192,13 @@ I would like to thank ChatGpt, StackOver flow community for the help and support
 
 <!-- FAQ (optional) -->
 
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
+## ❓ FAQ <a name="faq"></a>
 
 - **Why are the rspec tests failing?**
 
-  - I'm using to gems that help me to write and run tests `capybara` and `selenium`. Selenium works with an operating sytstem tha
+  - I'm using `capybara` and `selenium` gems that help me to write and run tests. Selenium is a popular tool for automating web browser interactions. You will need to have a web browser installed on your local machine. We recommend using Mozilla Firefox, as that is the browser I use in my testing environment.
+If you already have Firefox and you still have errors, these errors occurs when the Firefox driver is unable to find the Firefox binary location. By default, the driver will look for the Firefox binary in a set of default locations, but if it is not found, you will see this error.
+To fix these errors, you can specify the location of the Firefox binary using the :firefox_binary option in the Capybara configuration in spec/rails_helper.rb or spec/spec_helper.rb:
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
