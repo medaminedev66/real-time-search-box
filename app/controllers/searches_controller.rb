@@ -3,7 +3,7 @@ class SearchesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @searches = Search.all
+    @searches = current_user.searches
   end
 
   def search
@@ -12,7 +12,7 @@ class SearchesController < ApplicationController
 
   def create
     json_data = JSON.parse(request.body.read)
-    search = Search.new(json_data)
+    search = current_user.searches.new(json_data)
 
     if search.save
       render json: search, status: :ok
