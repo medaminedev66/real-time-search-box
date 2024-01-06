@@ -15,10 +15,44 @@
  */
 @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #141c2f;
+  background-color: #11121e;
   color: white;
   font-family: 'Heebo', sans-serif;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 255px;
+  height: 100vh;
+  padding: 1rem;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: #1d1d29;
+}
+
+.nav-item {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+
+.current {
+  background-color: white;
+  color: black;
 }
 
 .flex-row {
@@ -34,9 +68,13 @@ body {
   color: white;
 }
 
+.margin-left {
+  margin-left: 255px;
+}
+
 .container {
-  width: 50%;
-  margin: auto;
+  width: 70%;
+  margin: 2rem auto;
   gap: 1rem;
 }
 
@@ -94,4 +132,24 @@ td:first-child {
 th:nth-child(2),
 td:nth-child(2) {
   width: 30%;
+}
+
+.component {
+  background-color: #1d1d29;
+  border-radius: 1rem;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.analytic-container {
+  padding: 3rem;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.no-decoration:visited {
+  text-decoration: none;
+  color: inherit;
 }
