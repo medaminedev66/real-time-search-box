@@ -3,8 +3,31 @@
   <%= link_to 'Search for something else', '/searches/search', class: "white" %>
 <%# </div> %>
 <div class='margin-left analytic-container'>
-  <%= render partial: 'layouts/component' %>
-
+  <div class="flex-row top-section">
+    <div class=" flex-row head-container">
+      <%= render partial: 'layouts/component', locals: { data: {title: "Search users", "sub_title": @users_count, "last_sentence": "perfect"} } %>
+      <%= render partial: 'layouts/component', locals: { data: {title: "Your Total Searches", "sub_title": @user_total_queries, "last_sentence": "perfect"} } %>
+      <%= render partial: 'layouts/component', locals: { data: {title: "Total queries", "sub_title": @total_queries, "last_sentence": "perfect"} } %>
+      <%= render partial: 'layouts/component', locals: { data: {title: "Search users", "sub_title": "200", "last_sentence": "perfect"} } %>
+    </div>
+    <table class="most-keywords">
+      <thead>
+        <tr>
+          <th>Most sentences</th>
+          <th>Search times</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @keyword_counts.each do |keyword, count| %>
+          <tr>
+            <th class="normal-font"><%= keyword %></th>
+            <th class="normal-font"><%= count %></th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <p>Your last searches:</p>
   <table>
     <thead>
       <tr>
@@ -15,8 +38,8 @@
     <tbody>
     <% @searches.each do |search| %>
       <tr>
-        <th><%= search.sentence %></th>
-        <th><%= search.created_at %></th>
+        <th class="normal-font"><%= search.sentence %></th>
+        <th class="normal-font"><%= search.created_at %></th>
       </tr>
     <% end %>
     </tbody>

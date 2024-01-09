@@ -44,9 +44,31 @@ header {
   background-color: #1d1d29;
 }
 
+.button {
+  border: none;
+  background-color: white;
+  color: black;
+  padding: 0.5rem;
+  width: 25%;
+  border-radius: 5px;
+}
+
+.button:focus {
+  padding: 0.4rem;
+}
+
+.button:hover {
+  background-color: rgb(207, 207, 207);
+}
+
+.normal-font {
+  font-weight: 400;
+  font-size: 16px;
+}
+
 .nav-item {
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   text-decoration: none;
 }
 
@@ -115,7 +137,7 @@ td {
 th {
   background-color: #1f2a48;
   color: white;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 td {
@@ -139,6 +161,22 @@ td:nth-child(2) {
   border-radius: 1rem;
   gap: 1rem;
   padding: 1rem;
+  width: 100%;
+}
+
+.component h3 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.component h4 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.component p {
+  color: #7b7b7b;
+  font-size: 16px;
 }
 
 .analytic-container {
@@ -152,4 +190,55 @@ td:nth-child(2) {
 .no-decoration:visited {
   text-decoration: none;
   color: inherit;
+}
+
+/* SIGN SESSION */
+
+.auth {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 3rem;
+}
+
+.auth-form {
+  width: 25%;
+  gap: 1rem;
+}
+
+.form-layouts {
+  gap: 1rem;
+}
+
+a {
+  color: white;
+}
+
+a:visited {
+  color: antiquewhite;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Search Analytics page */
+.top-section {
+  gap: 1rem;
+}
+
+.head-container {
+  flex: 2;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.most-keywords {
+  flex: 1;
+}
+
+.head-container div {
+  min-width: 40%;
+  flex: 1;
 }

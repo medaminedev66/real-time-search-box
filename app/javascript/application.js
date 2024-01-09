@@ -3,13 +3,13 @@ import '@hotwired/turbo-rails';
 import 'controllers';
 
 let timeOut;
+let searchHistory = [];
 
 const search = () => {
   let searchValue = document.getElementById('search').value;
   const articleTitles = document.querySelectorAll('.article-title');
 
   articleTitles.forEach((title) => {
-    console.log(title.innerText);
     if (
       title.innerText.toLowerCase().indexOf(searchValue.toLowerCase()) != -1
     ) {
@@ -20,16 +20,22 @@ const search = () => {
   });
 };
 
-document.getElementById('search').addEventListener('keyup', () => {
+const detectSearchCompletion = () => {
   clearTimeout(timeOut);
-  timeOut = setTimeout(doneTimeOut, 4000);
+  timeOut = setTimeout(doneTimeOut, 3000);
+};
+
+document.getElementById('search').addEventListener('input', () => {
+  const newSearch = document.getElementById('search').value;
+  searchHistory.push(newSearch);
+  detectSearchCompletion();
   search();
 });
 
 const doneTimeOut = () => {
-  const search = document.getElementById('search').value;
+  const search = searchHistory.pop();
 
-  if (search.length > 0) {
+  if (search !== '') {
     fetch('/save_search', {
       method: 'POST',
       mode: 'no-cors',
@@ -44,4 +50,3 @@ const doneTimeOut = () => {
       });
   }
 };
-

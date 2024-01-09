@@ -12,19 +12,21 @@
   </head>
 
   <body>
-    <header class="flex-clm" id="main-header">
-      <ul>
-        <li class="<%= current_page?('/searches') ? ' nav-item current' : 'nav-item' %>">
-          <%= link_to 'Analytics', '/searches', class: 'no-decoration'%>
-        </li>
-        <li class="<%= current_page?('/searches/search') ? ' nav-item current' : 'nav-item' %>">
-          <%= link_to 'Search for articles', '/searches/search', class: 'no-decoration'%>
-        </li>
-      </ul>
-      <% if user_signed_in? %>
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "white" %>
-      <% end %>
-    </header>
+    <% if user_signed_in? %>
+      <header class="flex-clm" id="main-header">
+        <ul>
+          <li class="<%= current_page?('/searches') ? ' nav-item current' : 'nav-item' %>">
+            <%= link_to 'Analytics', '/searches', class: 'no-decoration'%>
+          </li>
+          <li class="<%= current_page?('/searches/search') || current_page?('/')? ' nav-item current' : 'nav-item' %>">
+            <%= link_to 'Search for articles', '/searches/search', class: 'no-decoration'%>
+          </li>
+        </ul>
+        <% if user_signed_in? %>
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "white" %>
+        <% end %>
+      </header>
+    <%end%>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
