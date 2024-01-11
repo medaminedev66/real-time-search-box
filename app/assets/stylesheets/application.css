@@ -105,6 +105,17 @@ header {
   align-items: center;
 }
 
+.logo {
+  font-size: 35px;
+  text-align: center;
+  font-weight: 700;
+  margin: 1rem auto 2rem auto;
+}
+
+.logo-position {
+  margin: 3rem auto;
+}
+
 .search-input {
   padding: 1rem;
   width: 100%;
@@ -125,7 +136,9 @@ article {
 table {
   width: 100%;
   border: 1px solid black;
+  border-radius: 1rem;
   border-collapse: collapse;
+  height: min-content;
 }
 
 th,
@@ -198,7 +211,7 @@ td:nth-child(2) {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 .auth-form {
@@ -241,4 +254,12 @@ a:visited {
 .head-container div {
   min-width: 40%;
   flex: 1;
+}
+
+.tables {
+  gap: 1rem;
+}
+
+.keywords-table {
+  height: min-content;
 }

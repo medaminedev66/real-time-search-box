@@ -8,7 +8,7 @@
 /node_modules
 # Ignore bundler config.
 /.bundle
-
+/testApi
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*

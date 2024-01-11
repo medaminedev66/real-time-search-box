@@ -74,3 +74,6 @@ end
 
 gem 'devise', '4.8.1'
 gem "responders", '~> 3.1.0'
+
+gem "dockerfile-rails", ">= 1.6", :group => :development
+gem 'news-api'

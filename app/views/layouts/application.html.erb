@@ -15,6 +15,7 @@
     <% if user_signed_in? %>
       <header class="flex-clm" id="main-header">
         <ul>
+          <li class="logo">real-time.<li>
           <li class="<%= current_page?('/searches') ? ' nav-item current' : 'nav-item' %>">
             <%= link_to 'Analytics', '/searches', class: 'no-decoration'%>
           </li>

@@ -2,6 +2,8 @@
   <h1> Latest searches </h1>
   <%= link_to 'Search for something else', '/searches/search', class: "white" %>
 <%# </div> %>
+
+
 <div class='margin-left analytic-container'>
   <div class="flex-row top-section">
     <div class=" flex-row head-container">
@@ -28,20 +30,38 @@
     </table>
   </div>
   <p>Your last searches:</p>
-  <table>
-    <thead>
-      <tr>
-        <th>Search</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @searches.each do |search| %>
-      <tr>
-        <th class="normal-font"><%= search.sentence %></th>
-        <th class="normal-font"><%= search.created_at %></th>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
+  <div class="flex-row tables">
+    <table>
+      <thead>
+        <tr>
+          <th>Search</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @searches.each do |search| %>
+        <tr>
+          <th class="normal-font"><%= search.sentence %></th>
+          <th class="normal-font"><%= search.created_at %></th>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <table class="keywords-table">
+      <thead>
+        <tr>
+          <th>Keyword</th>
+          <th>Number of times</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @keywords.each do |keyword, count| %>
+        <tr>
+          <th class="normal-font"><%= keyword %></th>
+          <th class="normal-font"><%= count %></th>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
