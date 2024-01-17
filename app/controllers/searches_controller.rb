@@ -15,8 +15,12 @@ class SearchesController < ApplicationController
 
   def search
     require 'news-api'
-    newsapi = News.new("975ec4bd3d464983a4f95d3e6454308c")
-    @articles = newsapi.get_everything(q: "ruby on rails", from: "2023-12-15&to=2024-01-05", sortBy: "popularity", language: 'en')
+    require 'date'
+    one_month_ago = Date.today.prev_month
+    yesterday = Date.today - 1
+    newsapi = News.new('975ec4bd3d464983a4f95d3e6454308c')
+    @articles = newsapi.get_everything(q: 'ruby on rails', from: `#{one_month_ago}&to=#{yesterday}`,
+                                       sortBy: 'popularity', language: 'en')
   end
 
   def create

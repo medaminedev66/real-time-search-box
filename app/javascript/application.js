@@ -22,7 +22,7 @@ const search = () => {
 
 const detectSearchCompletion = () => {
   clearTimeout(timeOut);
-  timeOut = setTimeout(doneTimeOut, 3000);
+  timeOut = setTimeout(doneTimeOut, 2000);
 };
 
 document.getElementById('search').addEventListener('input', () => {
