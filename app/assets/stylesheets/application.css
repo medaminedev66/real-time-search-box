@@ -12,7 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require flatpickr
+*= require flatpickr/themes/dark
  */
+
+
 @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
 
 * {
@@ -262,4 +266,26 @@ a:visited {
 
 .keywords-table {
   height: min-content;
+  width: 40%;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+#calendar-container {
+  /* display: none;
+  position: absolute; */
+  z-index: 2000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#date-trigger {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
 }

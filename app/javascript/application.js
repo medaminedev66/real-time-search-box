@@ -1,6 +1,10 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import '@hotwired/turbo-rails';
 import 'controllers';
+//= require flatpickr
+//= require_tree .
+
+
 
 let timeOut;
 let searchHistory = [];
@@ -50,3 +54,9 @@ const doneTimeOut = () => {
       });
   }
 };
+
+//date
+
+
+
+// Show the calendar when the "Select Date" text is clicked

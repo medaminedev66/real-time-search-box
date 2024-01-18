@@ -2,7 +2,11 @@
   <h1> Latest searches </h1>
   <%= link_to 'Search for something else', '/searches/search', class: "white" %>
 <%# </div> %>
-
+<% if request.headers['Referer'].to_s.present? && URI(request.headers['Referer']).path == '/searches/search' %>
+  <script>
+    location.reload();
+  </script>
+<% end %>
 
 <div class='margin-left analytic-container'>
   <div class="flex-row top-section">
@@ -29,24 +33,47 @@
       </tbody>
     </table>
   </div>
-  <p>Your last searches:</p>
   <div class="flex-row tables">
-    <table>
-      <thead>
-        <tr>
-          <th>Search</th>
-          <th>Date</th>
-        </tr>
-      </thead>
-      <tbody>
-      <% @searches.each do |search| %>
-        <tr>
-          <th class="normal-font"><%= search.sentence %></th>
-          <th class="normal-font"><%= search.created_at %></th>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
+    <div class="flex-clm width-100">
+      <div class="flex-row justify-between">
+        <p>Your last searches:</p>
+        <%= form_tag('/searches', method: 'get', id: 'date-form') do %>
+          <%= hidden_field_tag :search_date, nil, id: 'hidden-date-field' %>
+          <div id="calendar-container" class="calendar-container">Select date</div>
+          <!-- JavaScript to handle the calendar and update the hidden input -->
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              const calendarContainer = document.getElementById('calendar-container');
+              const hiddenDateField = document.getElementById('hidden-date-field');
+              const dateForm = document.getElementById('date-form');        
+              flatpickr(calendarContainer, {
+                dateFormat: 'Y-m-d',
+                onChange: function (selectedDates, dateStr, instance) {
+                  hiddenDateField.value = dateStr;
+                  dateForm.submit();
+                },
+              });
+            });
+          </script>
+        <% end %>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Search</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @searches_date.each do |search| %>
+          <tr>
+            <th class="normal-font"><%= search.sentence %></th>
+            <th class="normal-font"><%= search.created_at %></th>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
     <table class="keywords-table">
       <thead>
         <tr>

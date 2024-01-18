@@ -77,3 +77,4 @@ gem "responders", '~> 3.1.0'
 
 gem "dockerfile-rails", ">= 1.6", :group => :development
 gem 'news-api'
+gem 'flatpickr'

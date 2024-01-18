@@ -1,9 +1,14 @@
-import { Application } from "@hotwired/stimulus"
+import { Application } from '@hotwired/stimulus';
+//= require flatpickr
 
-const application = Application.start()
+// document.addEventListener('DOMContentLoaded', function () {
+//   flatpickr('.date_trigger');
+// });
+
+const application = Application.start();
 
 // Configure Stimulus development experience
-application.debug = false
-window.Stimulus   = application
+application.debug = false;
+window.Stimulus = application;
 
-export { application }
+export { application };

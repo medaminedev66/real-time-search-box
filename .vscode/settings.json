@@ -1,0 +1,12 @@
+{
+    "editor.fontSize": 15,
+    "editor.accessibilityPageSize": 15,
+    "editor.tabSize": 2,
+    "workbench.fontAliasing": "default",
+    "terminal.integrated.fontSize": 14,
+    "screencastMode.fontSize": 56,
+    "editor.suggestFontSize": 0,
+    "debug.console.fontSize": 12,
+    "scm.inputFontSize": 12,
+    "markdown.preview.fontSize": 14
+}

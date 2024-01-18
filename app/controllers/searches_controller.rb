@@ -4,13 +4,19 @@ class SearchesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @searches = current_user.searches.order('created_at DESC').take(10)
     words = filter_words(all_words!(Search.pluck(:sentence)))
     @keywords = top_5_repeated_keywords(words)
     @users_count = User.all.count
     @total_queries = Search.all.count
     @user_total_queries = current_user.searches.count
     @keyword_counts = Search.keyword_counts.take(5)
+    if params[:search_date].present?
+      selected_date = params[:search_date]
+      @searches_date = current_user.searches.where('DATE(created_at) = ?',
+                                                   selected_date).order('created_at DESC').take(10)
+    else
+      @searches_date = current_user.searches.order('created_at DESC').take(10)
+    end
   end
 
   def search
@@ -33,4 +39,6 @@ class SearchesController < ApplicationController
       render json: { success: false, errors: search.errors.full_message }
     end
   end
+
+  def find_searches; end
 end
