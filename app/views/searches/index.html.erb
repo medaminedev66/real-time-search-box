@@ -62,6 +62,7 @@
           <tr>
             <th>Search</th>
             <th>Date</th>
+            <th>Remove</th>
           </tr>
         </thead>
         <tbody>
@@ -69,26 +70,34 @@
           <tr>
             <th class="normal-font"><%= search.sentence %></th>
             <th class="normal-font"><%= search.created_at %></th>
+            <th>
+              <%= form_with(model: search, url: remove_search_path(search), method: :delete, local: true) do |form| %>
+                <%= form.submit 'Remove', data: { confirm: 'Are you sure?' } %>
+              <% end %>
+            </th>
           </tr>
         <% end %>
         </tbody>
       </table>
     </div>
-    <table class="keywords-table">
-      <thead>
-        <tr>
-          <th>Keyword</th>
-          <th>Number of times</th>
-        </tr>
-      </thead>
-      <tbody>
-      <% @keywords.each do |keyword, count| %>
-        <tr>
-          <th class="normal-font"><%= keyword %></th>
-          <th class="normal-font"><%= count %></th>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
+    <div class="keywords-table">
+      <p>Most keywords used in the platform</p>
+      <table class="keywords-table">
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th>Number of times</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @keywords.each do |keyword, count| %>
+          <tr>
+            <th class="normal-font"><%= keyword %></th>
+            <th class="normal-font"><%= count %></th>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

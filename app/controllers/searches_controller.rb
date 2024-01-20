@@ -40,5 +40,9 @@ class SearchesController < ApplicationController
     end
   end
 
-  def find_searches; end
+  def destroy
+    search = Search.find(params[:id])
+    search.destroy
+    redirect_to searches_path, notice: 'Search was successfully removed.'
+  end
 end
