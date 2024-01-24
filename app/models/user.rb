@@ -5,6 +5,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  scope :current_day, -> { where(created_at: Time.current.beginning_of_day..Time.current.end_of_day) }
-  scope :previous_day, -> { where(created_at: 1.day.ago.beginning_of_day..1.day.ago.end_of_day) }
+  scope :current_month, -> { where(created_at: Time.current.beginning_of_day..Time.current.end_of_day) }
+  scope :previous_month, -> { where(created_at: 1.month.ago.beginning_of_day..1.month.ago.end_of_day) }
 end

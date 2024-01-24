@@ -11,16 +11,16 @@
 <div class='flex-clm margin-left analytic-container'>
   <div class="flex-row top-section">
     <div class=" flex-row head-container">
-      <%= render partial: 'layouts/component', locals: { data: {title: "Search users", "sub_title": @users_count, "last_sentence": @users_rate} } %>
-      <%= render partial: 'layouts/component', locals: { data: {title: "Your total searches", "sub_title": @user_total_queries, "last_sentence": @total_rate} } %>
-      <%= render partial: 'layouts/component', locals: { data: {title: "Total queries", "sub_title": @total_queries, "last_sentence": @total_rate} } %>
-      <%= render partial: 'layouts/component', locals: { data: {title: "Today's queries", "sub_title": @today_queries, "last_sentence": @total_rate} } %>
+      <%= render partial: 'layouts/component', locals: { data: {title: "Users", "sub_title": @users_count, "last_sentence": @users_rate} } %>
+      <%= render partial: 'layouts/component', locals: { data: {title: "Total queries", "sub_title": @total_queries, "last_sentence": @total_searches_rate} } %>
+      <%= render partial: 'layouts/component', locals: { data: {title: "Your total searches", "sub_title": @user_total_queries, "last_sentence": @current_user_total_searches_rate} } %>
+      <%= render partial: 'layouts/component', locals: { data: {title: "Today's queries", "sub_title": @today_queries, "last_sentence": @searches_rate} } %>
     </div>
     <table class="most-keywords">
       <thead>
         <tr>
-          <th>Most sentences</th>
-          <th>Search times</th>
+          <th>Most searched sentences</th>
+          <th>Search frequency</th>
         </tr>
       </thead>
       <tbody>
@@ -36,7 +36,7 @@
   <div class="flex-row tables">
     <div class="flex-clm width-100">
       <div class="flex-row justify-between">
-        <p>Your last searches:</p>
+        <p>Your recent searches:</p>
         <%= form_tag('/searches', method: 'get', id: 'date-form') do %>
           <%= hidden_field_tag :search_date, nil, id: 'hidden-date-field' %>
           <div id="calendar-container" class="calendar-container">Select date</div>
@@ -81,12 +81,12 @@
       </table>
     </div>
     <div class="keywords-table">
-      <p>Most keywords used in the platform</p>
+      <p>Top keywords used on the platform</p>
       <table class="keywords-table">
         <thead>
           <tr>
             <th>Keyword</th>
-            <th>Number of times</th>
+            <th>Keyword frequency</th>
           </tr>
         </thead>
         <tbody>
