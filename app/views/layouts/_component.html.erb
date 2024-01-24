@@ -4,18 +4,18 @@
   <% compare_data = data[:last_sentence]%>
   <% if compare_data[:trend] == 'increase'%>
     <p>
-      <span style="color: green;"><%= compare_data[:search_rate]%>%</span>
-      <span>Since last month</span>
+      <span style="color: green;">↑<%= compare_data[:search_rate]%>%</span>
+      <span>Since <%= compare_data[:compare_time]%></span>
     </p>
   <% elsif compare_data[:trend] == 'decrease'%>
     <p>
-      <span style="color: red;"><%= compare_data[:search_rate]%>%</span>
-      <span>Since last month</span>
+      <span style="color: red;">↓<%= compare_data[:search_rate]%>%</span>
+      <span>Since <%= compare_data[:compare_time]%></span>
     </p>
   <% else %>
     <p>
       <span><%= compare_data[:search_rate]%>%</span>
-      <span>Since last month</span>
+      <span>Since <%= compare_data[:compare_time]%></span>
     </p>
   <% end %>
 </div>

@@ -8,8 +8,9 @@ class SearchesController < ApplicationController
     words = filter_words(all_words!(Search.pluck(:sentence)))
     @keywords = top_5_repeated_keywords(words)
     @users_count = User.all.count
+    @users_rate = compare(User.current_day.count, User.previous_day.count, "yesterday")
     @total_queries = Search.all.count
-    @total_rate = compare_weeks
+    @total_rate = compare(Search.current_week.count, Search.previous_week.count, "last week")
     @user_total_queries = current_user.searches.count
     @keyword_counts = Search.keyword_counts.take(5)
     if params[:search_date].present?
@@ -56,21 +57,22 @@ class SearchesController < ApplicationController
 
   private
 
-  def compare_weeks
-    current_week_count = Search.current_week.count
-    previous_week_count = Search.previous_week.count
+  def compare(count_current, count_previous, compare_time)
+    current_date_count = count_current
+    previous_date_count = count_previous
 
-    if previous_week_count > 0
-      search_rate = ((current_week_count - previous_week_count).to_f / previous_week_count) * 100
+    if previous_date_count > 0
+      search_rate = ((current_date_count - previous_date_count).to_f / previous_date_count) * 100
     else
       search_rate = 0
     end
 
     comparison_data = {
-      current_week_count: current_week_count,
-      previous_week_count: previous_week_count,
+      current_date_count: current_date_count,
+      previous_date_count: previous_date_count,
       search_rate:,
-      trend: search_rate.positive? ? 'increase' : (search_rate.negative? ? 'decrease' : 'no_change')
+      trend: search_rate.positive? ? 'increase' : (search_rate.negative? ? 'decrease' : 'no_change'),
+      compare_time:
     }
 
     comparison_data

@@ -4,4 +4,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  scope :current_day, -> { where(created_at: Time.current.beginning_of_day..Time.current.end_of_day) }
+  scope :previous_day, -> { where(created_at: 1.day.ago.beginning_of_day..1.day.ago.end_of_day) }
 end
