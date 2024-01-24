@@ -4,10 +4,12 @@ class SearchesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
+    require 'date'
     words = filter_words(all_words!(Search.pluck(:sentence)))
     @keywords = top_5_repeated_keywords(words)
     @users_count = User.all.count
     @total_queries = Search.all.count
+    @total_rate = compare_weeks
     @user_total_queries = current_user.searches.count
     @keyword_counts = Search.keyword_counts.take(5)
     if params[:search_date].present?
@@ -17,6 +19,7 @@ class SearchesController < ApplicationController
     else
       @searches_date = current_user.searches.order('created_at DESC').take(10)
     end
+    @today_queries = Search.all.where('DATE(created_at) = ?', Date.today).count
   end
 
   def search
@@ -42,7 +45,34 @@ class SearchesController < ApplicationController
 
   def destroy
     search = Search.find(params[:id])
-    search.destroy
-    redirect_to searches_path, notice: 'Search was successfully removed.'
+
+    if search.user == current_user
+      search.destroy
+      redirect_to searches_path, notice: 'Search was successfully removed.'
+    else
+      redirect_to searches_path, alert: 'You are not authorized to remove this search.'
+    end
+  end
+
+  private
+
+  def compare_weeks
+    current_week_count = Search.current_week.count
+    previous_week_count = Search.previous_week.count
+
+    if previous_week_count > 0
+      search_rate = ((current_week_count - previous_week_count).to_f / previous_week_count) * 100
+    else
+      search_rate = 0
+    end
+
+    comparison_data = {
+      current_week_count: current_week_count,
+      previous_week_count: previous_week_count,
+      search_rate:,
+      trend: search_rate.positive? ? 'increase' : (search_rate.negative? ? 'decrease' : 'no_change')
+    }
+
+    comparison_data
   end
 end

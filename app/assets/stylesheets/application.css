@@ -198,6 +198,7 @@ td:nth-child(2) {
 
 .analytic-container {
   padding: 3rem;
+  gap: 2rem;
 }
 
 .no-decoration {
@@ -289,4 +290,9 @@ a:visited {
 #date-trigger {
   color: blue;
   text-decoration: underline;
+}
+
+.delete-icon {
+  height: 24px;
+  width: 24px;
 }

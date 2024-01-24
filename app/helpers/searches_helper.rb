@@ -11,7 +11,7 @@ module SearchesHelper
 
   def filter_words(words)
     conjunctions_set = Set.new(%w[i you he she it we they mine yours his hers its
-                                  ours theirs and or but so for nor yet since the a an am are is])
+                                  ours theirs and or but so for nor yet since the a an am are is to])
     words.reject { |word| conjunctions_set.include?(word.downcase) }
   end
 

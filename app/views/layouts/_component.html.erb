@@ -1,5 +1,21 @@
 <div class='flex-clm component'>
   <h3><%= data[:title] %></h3>
   <h4><%= data[:sub_title] %></h4>
-  <p><%= data[:last_sentence] %></p>
+  <% compare_data = data[:last_sentence]%>
+  <% if compare_data[:trend] == 'increase'%>
+    <p>
+      <span style="color: green;"><%= compare_data[:search_rate]%>%</span>
+      <span>Since last month</span>
+    </p>
+  <% elsif compare_data[:trend] == 'decrease'%>
+    <p>
+      <span style="color: red;"><%= compare_data[:search_rate]%>%</span>
+      <span>Since last month</span>
+    </p>
+  <% else %>
+    <p>
+      <span><%= compare_data[:search_rate]%>%</span>
+      <span>Since last month</span>
+    </p>
+  <% end %>
 </div>
