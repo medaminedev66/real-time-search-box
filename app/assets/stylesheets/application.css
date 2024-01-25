@@ -74,6 +74,27 @@ header {
   padding: 0.5rem;
   border-radius: 1rem;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem
+}
+
+.nav-icon {
+  width: 25px;
+  height: 25px;
+  background-color: currentColor; /* Set your desired color */
+}
+
+.analytic {
+  mask: url('analytic.svg') no-repeat;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+
+.search {
+  mask: url('search.svg') no-repeat;
+  -webkit-mask-size: cover;
+  mask-size: cover;
 }
 
 .current {
@@ -182,7 +203,7 @@ td:nth-child(2) {
 }
 
 .component h3 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -194,6 +215,11 @@ td:nth-child(2) {
 .component p {
   color: #7b7b7b;
   font-size: 16px;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
 }
 
 .analytic-container {
