@@ -70,7 +70,7 @@ class SearchesController < ApplicationController
     {
       current_date_count:,
       previous_date_count:,
-      search_rate:,
+      search_rate: search_rate.round(2),
       trend: search_rate.positive? ? 'increase' : (search_rate.negative? ? 'decrease' : 'no_change'),
       compare_time:
     }

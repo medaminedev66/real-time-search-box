@@ -1,15 +1,18 @@
 <div class='flex-clm component'>
-  <h3><%= data[:title] %></h3>
+  <div class="flex-row justify-between">
+    <h3><%= data[:title] %></h3>
+    <%= image_tag "#{data[:icon]}.svg", class: "icon" %>
+  </div>
   <h4><%= data[:sub_title] %></h4>
   <% compare_data = data[:last_sentence]%>
   <% if compare_data[:trend] == 'increase'%>
     <p>
-      <span style="color: green;">↑<%= compare_data[:search_rate]%>%</span>
+      <span style="color: green;">↑ <%= compare_data[:search_rate]%>%</span>
       <span>since <%= compare_data[:compare_time]%></span>
     </p>
   <% elsif compare_data[:trend] == 'decrease'%>
     <p>
-      <span style="color: red;">↓<%= compare_data[:search_rate]%>%</span>
+      <span style="color: red;">↓ <%= compare_data[:search_rate]%>%</span>
       <span>since <%= compare_data[:compare_time]%></span>
     </p>
   <% else %>

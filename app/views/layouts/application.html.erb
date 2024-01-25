@@ -20,9 +20,11 @@
         <ul>
           <li class="logo">real-time.<li>
           <li class="<%= current_page?('/searches') ? ' nav-item current' : 'nav-item' %>">
+            <div class="nav-icon analytic"></div>
             <%= link_to 'Analytics', '/searches', class: 'no-decoration'%>
           </li>
           <li class="<%= current_page?('/searches/search') || current_page?('/')? ' nav-item current' : 'nav-item' %>">
+            <div class="nav-icon search"></div>
             <%= link_to 'Search for articles', '/searches/search', class: 'no-decoration'%>
           </li>
         </ul>

@@ -11,10 +11,10 @@
 <div class='flex-clm margin-left analytic-container'>
   <div class="flex-row top-section">
     <div class=" flex-row head-container">
-      <%= render partial: 'layouts/component', locals: { data: {title: "Users", "sub_title": @users_count, "last_sentence": @users_rate} } %>
-      <%= render partial: 'layouts/component', locals: { data: {title: "Total queries", "sub_title": @total_queries, "last_sentence": @total_searches_rate} } %>
-      <%= render partial: 'layouts/component', locals: { data: {title: "Your total searches", "sub_title": @user_total_queries, "last_sentence": @current_user_total_searches_rate} } %>
-      <%= render partial: 'layouts/component', locals: { data: {title: "Today's queries", "sub_title": @today_queries, "last_sentence": @searches_rate} } %>
+      <%= render partial: 'layouts/component', locals: { data: {title: "Users", "sub_title": @users_count, "last_sentence": @users_rate, "icon": "users" } } %>
+      <%= render partial: 'layouts/component', locals: { data: {title: "Total queries", "sub_title": @total_queries, "last_sentence": @total_searches_rate, "icon": "search" } } %>
+      <%= render partial: 'layouts/component', locals: { data: {title: "Your total searches", "sub_title": @user_total_queries, "last_sentence": @current_user_total_searches_rate, "icon": "database" } } %>
+      <%= render partial: 'layouts/component', locals: { data: {title: "Today's queries", "sub_title": @today_queries, "last_sentence": @searches_rate, "icon": "today" } } %>
     </div>
     <table class="most-keywords">
       <thead>
