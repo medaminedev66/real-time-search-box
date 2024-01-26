@@ -12,11 +12,18 @@
     <!-- In the <head> section of your layout file -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
   <body>
     <% if user_signed_in? %>
-      <header class="flex-clm" id="main-header">
+      <header class="flex-clm header" id="main-header">
         <ul>
           <li class="logo">real-time.<li>
           <li class="<%= current_page?('/searches') ? ' nav-item current' : 'nav-item' %>">
@@ -33,8 +40,6 @@
         <% end %>
       </header>
     <%end%>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
