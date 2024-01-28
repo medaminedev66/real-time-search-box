@@ -1,264 +1,274 @@
-<nav class="navbar">
-  <div class="container">
-    <div class="logo">
-      <a href="index.html">
-        real-time.
-      </a>
-    </div>
-    <div class="main-menu">
-      <ul>
-        <li>
-          <a href="index.html">Home</a>
-        </li>
-        <li>
-          <a href="#">About Us</a>
-        </li>
-        <li>
-          <a href="#">Blog</a>
-        </li>
-        <li>
-          <%= link_to content_tag(:i, '', class: 'fas fa-user') + ' Log In', new_user_session_path, class: "btn"%>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!-- Hero -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <h1 class="hero-heading text-xxl">
-        Find what you need instantly with our powerful real-time search box!
-      </h1>
-      <p class="hero-text">
-        A powerful solution to grow your startup. Fast!
-      </p>
-      <div class="hero-buttons">
-        <%= link_to 'Get Started', new_user_registration_path, class: "btn btn-primary"%>
-        <%= link_to content_tag(:i, '', class: 'fas fa-laptop') + 'Book a Demo', new_user_registration_path, class: "btn"%>
-      </div>
-    </div>
-  </div>
-</section>
-    <!-- Video Section -->
-<section class="video bg-black">
-  <div class="container-sm">
-    <h2 class="video-heading text-xl text-center">
-      See how it works and get started in less than 2 minutes
-    </h2>
-    <div class="video-content">
-      <a href="#">
-        <%= image_tag 'landing-page/video-preview.png', class: "video-preview" %>
-      </a>
-      <%= link_to 'Get started', new_user_registration_path, class: "btn btn-primary" %>
-    </div>
-  </div>
-</section>
-<section class="pricing">
-  <div class="container-sm">
-    <h3 class="pricing-heading text-xl text-center">Pricing</h3>
-    <p class="pricing-subheading text-md text-center">
-      Start free and scale while you grow. No hidden fees. Unlimited users
-      for free.
-    </p>
-    <div class="pricing-grid">
-      <!-- Pricing Card 1 -->
-      <div class="card bg-light">
-        <div class="pricing-card-header">
-          <h4 class="pricing-heading text-xl">Simple</h4>
-          <p class="pricing-card-subheading">
-            Keep track of your users, gain valuable insights, analyse
-            live data and performance metrics.
-          </p>
-          <p class="pricing-card-price">
-            <span class="text-xl">Free</span>
-            *No credit card needed
-          </p>
-        </div>
-        <div class="pricing-card-body">
-          <ul>
-            <li><i class="fas fa-check"></i> Real-time search results</li>
-            <li>
-              <i class="fas fa-check"></i>Data Analytics
-            </li>
-            <li><i class="fas fa-check"></i>Easy to use and intuitive interface</li>
-            <li>
-              <i class="fas fa-check"></i>Works on all devices
-            </li>
-          </ul>
-          <a href="#" class="btn btn-primary btn-block">Get Started</a>
-          </div>
-      </div>
-
-      <!-- Pricing Card 2 -->
-      <div class="card bg-black">
-        <div class="pricing-card-header">
-          <h4 class="pricing-card-heading text-xl">Premium</h4>
-          <p class="pricing-card-subheading">
-            Keep track of your users, gain valuable insights, analyze
-            live data and performance metrics.
-          </p>
-          <p class="pricing-card-price">
-            <span class="text-xl">$49</span> /month
-          </p>
-        </div>
-        <div class="pricing-card-body">
-          <p>Everything from the free plan plus:</p>
-          <ul>
-            <li><i class="fas fa-check"></i>Data-driven decisions</li>
-            <li><i class="fas fa-check"></i>Data visualization</li>
-            <li><i class="fas fa-check"></i>Instant suggestions as you type</li>
-          </ul>
-          <a href="#" class="btn btn-primary btn-block">Get Started</a>
-        </div>
-      </div>
-    </div>
-    <p class="pricing-footer text-center">
-      All prices are in USD and charged per month with applicable taxes
-          added at checkout.
-    </p>
-  </div>
-</section>
-<section class="faq bg-light">
-  <div class="container-sm">
-    <h3 class="text-xl text-center">Frequently Asked Questions</h3>
-    <ul class="faq-menu">
-      <li class="active">All</li>
-      <li>Getting Started</li>
-      <li>Pricing</li>
-    </ul>
-    <div class="faq-content">
-      <div class="faq-group">
-        <div class="faq-group-header">
-          <h4 class="text-md">
-            How does the real-time search work?
-          </h4>
-          <i class="fas fa-minus"></i>
-        </div>
-        <div class="faq-group-body open">
-          <p>
-            Our real-time search instantly updates search results as you type, providing you with the most relevant information without the need to submit a form.
-          </p>
-        </div>
-    </div>
-    <div class="faq-group">
-        <div class="faq-group-header">
-          <h4 class="text-md">
-            Can I customize the dashboards and reporting feature to display
-            the metrics that are most important to my business?
-          </h4>
-          <i class="fas fa-plus"></i>
-        </div>
-        <div class="faq-group-body">
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad
-            culpa enim blanditiis rem ipsum aliquam, unde iste fugit
-            praesentium eos?
-          </p>
-        </div>
-      </div>
-      <div class="faq-group">
-        <div class="faq-group-header">
-          <h4 class="text-md">
-            How do I perform a search?
-          </h4>
-          <i class="fas fa-plus"></i>
-        </div>
-        <div class="faq-group-body">
-          <p>
-            Simply start typing your query in the search box, and our app will instantly display relevant results as you type.
-          </p>
-        </div>
-      </div>
-
-      <div class="faq-group">
-        <div class="faq-group-header">
-          <h4 class="text-md">
-            Can I filter search results?
-          </h4>
-          <i class="fas fa-plus"></i>
-        </div>
-        <div class="faq-group-body">
-          <p>
-            Yes, our web app provides filtering options to help you narrow down search results based on specific criteria.
-          </p>
-        </div>
-      </div>
-
-      <div class="faq-group">
-        <div class="faq-group-header">
-          <h4 class="text-md">Are my searches saved?</h4>
-          <i class="fas fa-plus"></i>
-        </div>
-        <div class="faq-group-body">
-          <p>
-            Your search history is saved securely within the app, allowing you to revisit and track your previous searches.
-          </p>
-        </div>
-      </div>
-      <div class="faq-group">
-        <div class="faq-group-header">
-          <h4 class="text-md">
-            How often are search results updated?
-          </h4>
-          <i class="fas fa-plus"></i>
-        </div>
-        <div class="faq-group-body">
-          <p>
-            Our app ensures real-time updates, providing you with the latest and most relevant search results as they become available.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<footer class="footer bg-black">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
+<div class="z-idx">
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
         <a href="index.html">
           real-time.
         </a>
-        <div class="card">
-          <h4>Subscribe to Newsletter</h4>
-          <p class="text-sm">
-            Subscribe now to receive tips on how to take your business to
-            the next level.
-          </p>
-          <form>
-            <input type="email" id="email" placeholder="Enter your email" />
-            <button type="submit" class="btn btn-primary btn-block">
-              Subscribe
-            </button>
-          </form>
-        </div>
-        <i class="fab fa-linkedin"></i>
-        <i class="fab fa-twitter"></i>
       </div>
-      <div>
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Our Process</a></li>
-          <li><a href="#">Join Our Team</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Research</a></li>
-          <li><a href="#">Recent Projects</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
+      <div class="main-menu">
         <ul>
           <li>
-            <a href="#">md.amine.smahi@gmail.com</a>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="https://smahi.me/">About Us</a>
+          </li>
+          <li>
+            <% if user_signed_in? %>
+              <%= link_to content_tag(:i, '', class: 'fas fa-table-columns') + 'Dashboard', searches_path, class: "btn"%>
+            <% else %>
+              <%= link_to content_tag(:i, '', class: 'fas fa-user') + ' Log In', new_user_session_path, class: "btn"%>
+            <% end %>
           </li>
         </ul>
       </div>
     </div>
-  </div>
-</footer>
+  </nav>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-heading text-xxl">
+          Find what you need instantly with our powerful real-time search box!
+        </h1>
+        <p class="hero-text">
+          A powerful solution to grow your startup. Fast!
+        </p>
+        <div class="hero-buttons">
+          <%= link_to 'Get Started', new_user_registration_path, class: "btn btn-primary"%>
+          <% if !user_signed_in? %>
+            <%= link_to content_tag(:i, '', class: 'fas fa-laptop') + 'Book a Demo', new_user_registration_path, class: "btn"%>
+          <% end %>
+        </div>
+      </div>
+      <%= image_tag 'analytic.png', alt: "", class: "analytic-landing" %>
+    </div>
+  </section>
+      <!-- Video Section -->
+  <section class="video bg-black">
+    <div class="container-sm">
+      <h2 class="video-heading text-xl text-center">
+        See how it works and get started in less than 2 minutes
+      </h2>
+      <div class="video-content">
+        <a href="#">
+          <%= image_tag 'landing-page/video-preview.png', class: "video-preview" %>
+        </a>
+        <%= link_to 'Get started', new_user_registration_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </section>
+  <section class="pricing">
+    <div class="container-sm">
+      <h3 class="pricing-heading text-xl text-center">Pricing</h3>
+      <p class="pricing-subheading text-md text-center">
+        Start free and scale while you grow. No hidden fees. Unlimited users
+        for free.
+      </p>
+      <div class="pricing-grid">
+        <!-- Pricing Card 1 -->
+        <div class="card bg-light">
+          <div class="pricing-card-header">
+            <h4 class="pricing-heading text-xl">Simple</h4>
+            <p class="pricing-card-subheading">
+              Keep track of your users, gain valuable insights, analyse
+              live data and performance metrics.
+            </p>
+            <p class="pricing-card-price">
+              <span class="text-xl">Free</span>
+              *No credit card needed
+            </p>
+          </div>
+          <div class="pricing-card-body">
+            <ul>
+              <li><i class="fas fa-check"></i> Real-time search results</li>
+              <li>
+                <i class="fas fa-check"></i>Data Analytics
+              </li>
+              <li><i class="fas fa-check"></i>Easy to use and intuitive interface</li>
+              <li>
+                <i class="fas fa-check"></i>Works on all devices
+              </li>
+            </ul>
+            <a href="#" class="btn btn-primary btn-block">Get Started</a>
+            </div>
+        </div>
+  
+        <!-- Pricing Card 2 -->
+        <div class="card bg-black">
+          <div class="pricing-card-header">
+            <h4 class="pricing-card-heading text-xl">Premium</h4>
+            <p class="pricing-card-subheading">
+              Keep track of your users, gain valuable insights, analyze
+              live data and performance metrics.
+            </p>
+            <p class="pricing-card-price">
+              <span class="text-xl">$49</span> /month
+            </p>
+          </div>
+          <div class="pricing-card-body">
+            <p>Everything from the free plan plus:</p>
+            <ul>
+              <li><i class="fas fa-check"></i>Data-driven decisions</li>
+              <li><i class="fas fa-check"></i>Data visualization</li>
+              <li><i class="fas fa-check"></i>Instant suggestions as you type</li>
+            </ul>
+            <a href="#" class="btn btn-primary btn-block">Get Started</a>
+          </div>
+        </div>
+      </div>
+      <p class="pricing-footer text-center">
+        All prices are in USD and charged per month with applicable taxes
+            added at checkout.
+      </p>
+    </div>
+  </section>
+  <section class="faq bg-light">
+    <div class="container-sm">
+      <h3 class="text-xl text-center">Frequently Asked Questions</h3>
+      <ul class="faq-menu">
+        <li class="active">All</li>
+        <li>Getting Started</li>
+        <li>Pricing</li>
+      </ul>
+      <div class="faq-content">
+        <div class="faq-group">
+          <div class="faq-group-header">
+            <h4 class="text-md">
+              How does the real-time search work?
+            </h4>
+            <i class="fas fa-minus"></i>
+          </div>
+          <div class="faq-group-body open">
+            <p>
+              Our real-time search instantly updates search results as you type, providing you with the most relevant information without the need to submit a form.
+            </p>
+          </div>
+      </div>
+      <div class="faq-group">
+          <div class="faq-group-header">
+            <h4 class="text-md">
+              Can I customize the dashboards and reporting feature to display
+              the metrics that are most important to my business?
+            </h4>
+            <i class="fas fa-plus"></i>
+          </div>
+          <div class="faq-group-body">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad
+              culpa enim blanditiis rem ipsum aliquam, unde iste fugit
+              praesentium eos?
+            </p>
+          </div>
+        </div>
+        <div class="faq-group">
+          <div class="faq-group-header">
+            <h4 class="text-md">
+              How do I perform a search?
+            </h4>
+            <i class="fas fa-plus"></i>
+          </div>
+          <div class="faq-group-body">
+            <p>
+              Simply start typing your query in the search box, and our app will instantly display relevant results as you type.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-group">
+          <div class="faq-group-header">
+            <h4 class="text-md">
+              Can I filter search results?
+            </h4>
+            <i class="fas fa-plus"></i>
+          </div>
+          <div class="faq-group-body">
+            <p>
+              Yes, our web app provides filtering options to help you narrow down search results based on specific criteria.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-group">
+          <div class="faq-group-header">
+            <h4 class="text-md">Are my searches saved?</h4>
+            <i class="fas fa-plus"></i>
+          </div>
+          <div class="faq-group-body">
+            <p>
+              Your search history is saved securely within the app, allowing you to revisit and track your previous searches.
+            </p>
+          </div>
+        </div>
+        <div class="faq-group">
+          <div class="faq-group-header">
+            <h4 class="text-md">
+              How often are search results updated?
+            </h4>
+            <i class="fas fa-plus"></i>
+          </div>
+          <div class="faq-group-body">
+            <p>
+              Our app ensures real-time updates, providing you with the latest and most relevant search results as they become available.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer bg-black">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html">
+            real-time.
+          </a>
+          <div class="card">
+            <h4>Subscribe to Newsletter</h4>
+            <p class="text-sm">
+              Subscribe now to receive tips on how to take your business to
+              the next level.
+            </p>
+            <form>
+              <input type="email" id="email" placeholder="Enter your email" />
+              <button type="submit" class="btn btn-primary btn-block">
+                Subscribe
+              </button>
+            </form>
+          </div>
+          <a href="https://www.linkedin.com/in/md-amine-smahi/">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://twitter.com/medaminesmahi">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Process</a></li>
+            <li><a href="#">Join Our Team</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Research</a></li>
+            <li><a href="#">Recent Projects</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>
+              <a href="#">md.amine.smahi@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

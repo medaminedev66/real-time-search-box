@@ -41,5 +41,14 @@
       </header>
     <%end%>
     <%= yield %>
+    <script>
+      {
+        const header = document.getElementById('main-header');
+        console.log(window.location.pathname);
+        if (window.location.pathname == '/') {
+          header.style.display = 'none';
+        }
+      }   
+    </script>
   </body>
 </html>
