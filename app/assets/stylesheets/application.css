@@ -133,6 +133,10 @@ li {
   color: white;
 }
 
+.under-line {
+  text-decoration: underline;
+}
+
 .margin-left {
   margin-left: 255px;
 }
@@ -698,6 +702,11 @@ td:nth-child(2) {
     margin-bottom: 10px;
     display: block;
     width: 100%;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: row;
   }
 
   .testimonials .testimonials-heading {

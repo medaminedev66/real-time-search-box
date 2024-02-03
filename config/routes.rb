@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   post '/save_search', to: 'searches#create', defaults: { format: :json }
   # get '/find_searches', to: 'searches#find_searches'
   delete '/remove_search/:id', to: 'searches#destroy', as: 'remove_search'
+  post '/demo/create_demo_user', to: 'demo#create_demo_user', as: :create_demo_user
 end

@@ -22,6 +22,11 @@
   </head>
 
   <body>
+    <% flash.each do |key, message| %>
+      <div class="flash <%= key %>">
+        <%= message %>
+      </div>
+    <% end %>
     <% if user_signed_in? %>
       <header class="flex-clm header" id="main-header">
         <ul>
@@ -35,9 +40,12 @@
             <%= link_to 'Search for articles', '/searches/search', class: 'no-decoration'%>
           </li>
         </ul>
+        <div>
         <% if user_signed_in? %>
-          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "white" %>
+          <p>Signed in as <%= current_user.email %></p>
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "white under-line" %>
         <% end %>
+        </div>
       </header>
     <%end%>
     <%= yield %>

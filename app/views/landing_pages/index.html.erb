@@ -38,7 +38,7 @@
         <div class="hero-buttons">
           <%= link_to 'Get Started', new_user_registration_path, class: "btn btn-primary"%>
           <% if !user_signed_in? %>
-            <%= link_to content_tag(:i, '', class: 'fas fa-laptop') + 'Book a Demo', new_user_registration_path, class: "btn"%>
+            <%= button_to content_tag(:i, '', class: 'fas fa-laptop') + 'Book a Demo', create_demo_user_path, method: :post, class: "btn", form_authenticity_token: true%>
           <% end %>
         </div>
       </div>
