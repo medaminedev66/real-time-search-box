@@ -380,7 +380,7 @@ td:nth-child(2) {
 .analytic-landing {
   border-radius: 1rem;
   width: 48%;
-  height: fit-content;
+  height: auto;
 }
 
 .hero .container {
@@ -669,6 +669,20 @@ td:nth-child(2) {
   color: #fff;
 }
 
+.hero-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3rem;
+}
+
+.button_to {
+  height: 100% !important;
+}
+
+.h-100 {
+  height: 100%;
+}
+
 /* Media Queries */
 @media (max-width: 960px) {
   .text-xxl {
@@ -680,7 +694,11 @@ td:nth-child(2) {
   .navbar .main-menu {
     display: none;
   }
-
+  
+  .container {
+    flex-direction: column;
+  }
+  
   .navbar .hamburger-button {
     display: block;
   }
@@ -705,8 +723,8 @@ td:nth-child(2) {
   }
 
   .hero-buttons {
-    display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 0.3rem;
   }
 
   .testimonials .testimonials-heading {

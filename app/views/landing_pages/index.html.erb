@@ -35,10 +35,12 @@
         <p class="hero-text">
           A powerful solution to grow your startup. Fast!
         </p>
-        <div class="hero-buttons">
+        <div class="flex-row hero-buttons">
           <%= link_to 'Get Started', new_user_registration_path, class: "btn btn-primary"%>
           <% if !user_signed_in? %>
-            <%= button_to content_tag(:i, '', class: 'fas fa-laptop') + 'Book a Demo', create_demo_user_path, method: :post, class: "btn", form_authenticity_token: true%>
+          <div>
+            <%= button_to content_tag(:i, '', class: 'fas fa-laptop') + 'Book a Demo', create_demo_user_path, method: :post, class: "btn h-100", form_authenticity_token: true%>
+          </div>
           <% end %>
         </div>
       </div>
